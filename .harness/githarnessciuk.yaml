@@ -20,12 +20,42 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: GitClone
+                  name: Git-Checkout
+                  identifier: GitCheckout
+                  spec:
+                    connectorRef: githarnessuk
+                    build:
+                      type: branch
+                      spec:
+                        branch: main
+              - step:
                   type: Run
-                  name: Run_1
+                  name: Install_Dependencies
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: echo "HEllo world"
+                    command: |-
+                      echo "Installiing dependencies"
+                      npm install
+              - step:
+                  type: Run
+                  name: Run_Script
+                  identifier: Run_Script
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo "Running script"
+                      node src/index.js
+              - step:
+                  type: Run
+                  name: Run_Test
+                  identifier: Run_Test
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo "Running Tests"
+                      npm test
           infrastructure:
             type: VM
             spec:
