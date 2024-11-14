@@ -17,13 +17,6 @@ pipeline:
         type: CI
         spec:
           cloneCodebase: true
-          infrastructure:
-            type: VM
-            spec:
-              type: Pool
-              spec:
-                poolName: ubuntu-gcp
-                os: Linux
           execution:
             steps:
               - step:
@@ -33,5 +26,11 @@ pipeline:
                   spec:
                     shell: Sh
                     command: echo "HEllo world"
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
         delegateSelectors:
           - docker-delegate
