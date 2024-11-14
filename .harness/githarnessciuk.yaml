@@ -33,3 +33,5 @@ pipeline:
                   spec:
                     shell: Sh
                     command: echo "HEllo world"
+        delegateSelectors:
+          - docker-delegate
