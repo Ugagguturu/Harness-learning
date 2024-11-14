@@ -1,0 +1,35 @@
+pipeline:
+  name: git-harness-ci-uk
+  identifier: githarnessciuk
+  projectIdentifier: ORCA_onedev
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: githarnessuk
+        build: <+input>
+  stages:
+    - stage:
+        name: first_build
+        identifier: first_build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: VM
+            spec:
+              type: Pool
+              spec:
+                poolName: ubuntu-gcp
+                os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: echo "HEllo world"
