@@ -37,6 +37,8 @@ pipeline:
                     shell: Sh
                     command: |-
                       echo "Installiing dependencies"
+                      sudo apt update -y
+                      sudo apt install nodejs npm
                       npm install
               - step:
                   type: Run
