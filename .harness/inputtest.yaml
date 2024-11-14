@@ -1,0 +1,14 @@
+inputSet:
+  name: input-test
+  identifier: inputtest
+  orgIdentifier: default
+  projectIdentifier: ORCA_onedev
+  pipeline:
+    identifier: githarnessciuk
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
