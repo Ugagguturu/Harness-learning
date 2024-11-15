@@ -37,10 +37,10 @@ pipeline:
                     shell: Sh
                     command: |-
                       echo "Installiing dependencies"
-                      sudo apt update -y
-                      sudo apt install -y nodejs npm
-                      sudo mv package.json /harness/package.json
-                      sudo npm install
+                      #sudo apt update -y
+                      #sudo apt install -y nodejs npm
+                      #sudo mv package.json /harness/package.json
+                      #sudo npm install
               - step:
                   type: Run
                   name: Run_Script
