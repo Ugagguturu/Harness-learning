@@ -21,16 +21,24 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Run_1
-                  identifier: Run_1
+                  name: Run_Packer
+                  identifier: Run_Packer
                   spec:
                     shell: Sh
-                    command: echo "HEllo world"
-          platform:
-            os: Linux
-            arch: Arm64
-          runtime:
-            type: Cloud
-            spec: {}
+                    command: |-
+                      sudo apt update -y
+                      echo "instlliing unzip"
+                      sudo apt install unzip -y
+                      sudo curl -Lo packer.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
+                      sudo unzip packer.zip
+                      sudo mv packer /usr/local/bin/
+                      packer --version
+          infrastructure:
+            type: VM
+            spec:
+              type: Pool
+              spec:
+                poolName: ubuntu-gcp
+                os: Linux
         delegateSelectors:
           - docker-delegate
