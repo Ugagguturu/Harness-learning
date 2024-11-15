@@ -33,6 +33,10 @@ pipeline:
                       sudo unzip packer.zip
                       sudo mv packer /usr/local/bin/
                       packer --version
+
+                      echo "Executing packer"
+                      sudo packer init gcp-image.pkr.hcl
+                      sudo packer build gcp-image.pkr.hcl
           infrastructure:
             type: VM
             spec:
