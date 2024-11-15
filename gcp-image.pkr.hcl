@@ -12,6 +12,7 @@ source "googlecompute" "gcp-image" {
   source_image     = "debian-11-bullseye-v20230905" # Example source image
   zone             = "us-central1-a"
   machine_type     = "e2-medium"
+  scopes           = ["https://www.googleapis.com/auth/cloud-platform"]
   ssh_username     = "root" # Set the username here
   use_os_login     = "true" # Optional, enables OS login
 }
