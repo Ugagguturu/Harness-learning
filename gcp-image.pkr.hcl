@@ -17,6 +17,7 @@ source "googlecompute" "gcp-image" {
   use_os_login     = "true" # Optional, enables OS login
 }
 
+
 build {
   sources = ["source.googlecompute.gcp-image"]
 
