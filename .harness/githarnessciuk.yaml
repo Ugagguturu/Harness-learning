@@ -27,6 +27,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       sudo apt update -y
+                      echo "instlliing unzip"
                       sudo apt install unzip -y
                       sudo curl -Lo packer.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
                       sudo unzip packer.zip
