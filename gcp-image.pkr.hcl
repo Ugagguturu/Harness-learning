@@ -9,7 +9,7 @@ packer {
 
 source "googlecompute" "gcp-image" {
   project_id       = "dev-bivouac-441702-t4"
-  source_image     = "debian-11-bullseye-v20230905" # Example source image
+  source_image     = "projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-1804-bionic-v20220510" # Example source image
   zone             = "us-central1-a"
   machine_type     = "e2-medium"
   scopes           = ["https://www.googleapis.com/auth/cloud-platform", "https://www.googleapis.com/auth/compute", "https://www.googleapis.com/auth/iam", "https://www.googleapis.com/auth/oslogin"]
