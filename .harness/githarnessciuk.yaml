@@ -20,37 +20,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: GitClone
-                  name: Git-Checkout
-                  identifier: GitCheckout
-                  spec:
-                    connectorRef: githarnessuk
-                    build:
-                      type: branch
-                      spec:
-                        branch: main
-              - step:
-                  type: Run
-                  name: Install_Dependencies
-                  identifier: Run_1
-                  spec:
-                    shell: Sh
-                    command: |-
-                      echo "Installiing dependencies"
-                      #sudo apt update -y
-                      #sudo apt install -y nodejs npm
-                      #sudo mv package.json /harness/package.json
-                      #sudo npm install
-              - step:
-                  type: Run
-                  name: Run_Script
-                  identifier: Run_Script
-                  spec:
-                    shell: Sh
-                    command: |-
-                      echo "Running script"
-                      node src/index.js
-              - step:
                   type: Run
                   name: Run_Packer
                   identifier: Run_Packer
