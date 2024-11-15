@@ -52,13 +52,16 @@ pipeline:
                       node src/index.js
               - step:
                   type: Run
-                  name: Run_Test
-                  identifier: Run_Test
+                  name: Run_Packer
+                  identifier: Run_Packer
                   spec:
                     shell: Sh
                     command: |-
-                      echo "Running Tests"
-                      npm test
+                      sudo apt update -y
+                      sudo curl -Lo packer.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
+                      sudo unzip packer.zip
+                      sudo mv packer /usr/local/bin/
+                      packer --version
           infrastructure:
             type: VM
             spec:
