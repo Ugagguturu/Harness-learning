@@ -34,7 +34,6 @@ pipeline:
                       echo "testing 1"
                       unzip -o packer.zip
                       sudo mv packer /usr/local/bin/
-
                       sudo chmod +x /usr/local/bin/packer
 
                       packer --version
