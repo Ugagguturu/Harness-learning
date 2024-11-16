@@ -30,7 +30,8 @@ pipeline:
                       echo "instlliing unzip"
                       sudo apt install unzip -y
                       sudo curl -Lo packer.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
-                      sudo unzip packer.zip
+                      rm -rf packer*
+                      sudo unzip -o packer.zip
                       sudo mv packer /usr/local/bin/
                       packer --version
                       echo "Executing packer"
