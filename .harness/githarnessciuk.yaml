@@ -29,11 +29,14 @@ pipeline:
                       sudo apt-get update -y
                       echo "instlliing unzip"
                       sudo apt install unzip -y
+                      echo "downloding packer"
                       sudo curl -Lo packer.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
                       echo "testing 1"
-                      sudo unzip -o packer.zip
+                      sudo unzip packer.zip
                       echo "testing 2"
+                      sleep 300
                       sudo mv packer /usr/local/bin/
+                      sleep 60
                       echo "testing 3"
                       sudo chmod +x /usr/local/bin/packer
 
