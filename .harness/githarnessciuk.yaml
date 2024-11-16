@@ -29,8 +29,6 @@ pipeline:
                       sudo apt-get update -y
                       echo "instlliing unzip"
                       sudo apt install unzip -y
-                      sudo rm -rf /usr/local/bin/packer/*
-                      sudo rm -rf /usr/local/bin/packer/
                       sudo curl -Lo packer.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
                       sudo unzip -o packer.zip
                       sudo mv packer /usr/local/bin/
