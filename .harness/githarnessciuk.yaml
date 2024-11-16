@@ -38,7 +38,7 @@ pipeline:
 
                       packer --version
                       echo "Executing packer"
-                      mkdir packer_dir/main.pkr.hcl
+                      touch packer_dir/main.pkr.hcl
                       cat packer_dir/variables.pkr.hcl packer_dir/source.pkr.hcl packer_dir/provisioners.pkr.hcl > packer_dir/main.pkr.hcl
 
                       packer init packer_dir/main.pkr.hcl
