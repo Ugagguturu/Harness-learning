@@ -6,5 +6,6 @@ source "googlecompute" "gcp-image" {
   scopes           = ["https://www.googleapis.com/auth/cloud-platform", "https://www.googleapis.com/auth/compute"]
   ssh_username     = var.ssh_username
   use_os_login     = "true" # Optional, enables OS login
+  image_family     = var.image_family
 }
 

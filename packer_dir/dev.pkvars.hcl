@@ -3,4 +3,4 @@ source_image  = "debian-12-bookworm-v20241112" # Example source image
 zone          = "us-central1-a"
 machine_type  = "e2-medium"
 ssh_username  = "root"
-
+image_family  = "harness-img-family"

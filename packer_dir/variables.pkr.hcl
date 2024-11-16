@@ -33,3 +33,8 @@ variable "ssh_username" {
   default = "root"
 }
 
+variable "image_family" {
+  type    = string
+  default = "harness-img-family"
+}
+
