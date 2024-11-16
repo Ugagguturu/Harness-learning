@@ -37,4 +37,3 @@ variable "image_family" {
   type    = string
   default = "harness-img-family"
 }
-
