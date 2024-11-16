@@ -39,10 +39,13 @@ pipeline:
 
                       packer --version
                       echo "Executing packer"
+                      mkdir packer_dir/main.pkr.hcl
+                      cat packer_dir/variables.pkr.hcl packer_dir/source.pkr.hcl packer_dir/provisioners.pkr.hcl > packer_dir/main.pkr.hcl
 
-                      packer init packer_dir/
+                      packer init packer_dir/main.pkr.hcl
                       packer validate -var-file=packer_dir/dev.pkvars.hcl packer_dir/main.pkr.hcl
                       packer build -var-file=packer_dir/dev.pkvars.hcl packer_dir/main.pkr.hcl
+                      rm -rf packer_dir/main.pkr.hcl
           infrastructure:
             type: VM
             spec:
