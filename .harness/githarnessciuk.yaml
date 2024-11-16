@@ -30,12 +30,10 @@ pipeline:
                       echo "instlliing unzip"
                       sudo apt install unzip -y
                       echo "downloding packer"
-                      sudo curl -Lo packer_1.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
+                      sudo curl -Lo /usr/local/bin/packer.zip https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
                       echo "testing 1"
-                      sudo unzip packer_1.zip
-                      echo "testing 2"
-                      sudo mv packer_1 /usr/local/bin/packer
-                      echo "testing 3"
+                      sudo unzip /usr/local/bin/packer.zip
+                      sudo rm /usr/local/bin/packer.zip
                       sudo chmod +x /usr/local/bin/packer
 
                       packer --version
