@@ -40,7 +40,7 @@ pipeline:
                       packer --version
                       echo "Executing packer"
 
-                      packer init packer_dir/main.pkr.hcl
+                      packer init packer_dir/
                       packer validate -var-file=packer_dir/dev.pkvars.hcl packer_dir/main.pkr.hcl
                       packer build -var-file=packer_dir/dev.pkvars.hcl packer_dir/main.pkr.hcl
           infrastructure:
